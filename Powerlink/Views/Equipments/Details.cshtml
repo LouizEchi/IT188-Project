@@ -1,0 +1,58 @@
+﻿@model Powerlink.Equipment
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div class="login create-box col-md-6 col-sm-6 col-xs-6">
+    <p class="create-text">Equipment</p>
+        <dl class="dl-horizontal details">
+            <dt>
+                Name
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Eqp_Name)
+            </dd>
+
+            <dt>
+                Category
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Eqp_Category)
+            </dd>
+
+            <dt>
+               Price
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Eqp_Price)
+            </dd>
+
+            <dt>
+               Quantity
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Eqp_Quantity)
+            </dd>
+
+            <dt>
+                Description
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Eqp_Description)
+            </dd>
+
+        </dl>
+</div>
+<div class="b-to-list col-md-6 col-sm-6 col-xs-6">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</div>

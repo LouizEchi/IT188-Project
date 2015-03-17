@@ -52,3 +52,6 @@ D:\Personal\Powerlink\Documents\Visual Studio 2013\Projects\Powerlink\Powerlink\
 D:\Personal\Powerlink\Documents\Visual Studio 2013\Projects\Powerlink\Powerlink\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Personal\Powerlink\Documents\Visual Studio 2013\Projects\Powerlink\Powerlink\obj\Debug\Powerlink.dll
 D:\Personal\Powerlink\Documents\Visual Studio 2013\Projects\Powerlink\Powerlink\obj\Debug\Powerlink.pdb
+d:\personal\powerlink\documents\visual studio 2013\Projects\Powerlink\Powerlink\obj\Debug\Powerlink.csprojResolveAssemblyReference.cache
+D:\Personal\Powerlink\Documents\Visual Studio 2013\Projects\Powerlink\Powerlink\bin\ClassLibrary1.dll
+D:\Personal\Powerlink\Documents\Visual Studio 2013\Projects\Powerlink\Powerlink\bin\ClassLibrary1.pdb

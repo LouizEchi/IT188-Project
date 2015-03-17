@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PowerlinkModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin_Username" Type="varchar" MaxLength="255" />
+    <Property Name="Admin_Password" Type="varchar" MaxLength="255" />
+    <Property Name="Admin_FName" Type="varchar" MaxLength="255" />
+    <Property Name="Admin_LName" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eqp_Name" Type="varchar" MaxLength="255" />
+    <Property Name="Eqp_Category" Type="varchar" MaxLength="255" />
+    <Property Name="Eqp_Price" Type="int" />
+    <Property Name="Eqp_Quantity" Type="int" />
+    <Property Name="Eqp_Description" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="PowerlinkModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Equipment" EntityType="Self.Equipment" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

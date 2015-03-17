@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Powerlink.Equipment>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="intro-project-table pagination">
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+    <table class="dataTable  " id="keywords" cellspacing="0" cellpadding="0">
+       <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Eqp_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eqp_Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eqp_Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eqp_Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Eqp_Description)
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Eqp_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Eqp_Category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Eqp_Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Eqp_Quantity)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Eqp_Description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@Scripts.Render("~/bundles/Datatables")
+<script>
+        $(document).ready(function() {
+           $('#click-project').addClass("visibility-hidden").hide("slow",function() {});
+           $('#please-project').addClass("visibility-hidden").hide("slow",function() {});
+           $('#phrase').addClass("visibility-hidden").hide("slow",function() {}).delay(100)
+                      .queue(function() {
+                        $(this).removeClass("visibility-hidden");
+                        $(this).fadeIn(300,function() {});
+                        $('#click-project').delay(300).queue(function(){
+                                                  $(this).removeClass("visibility-hidden");
+                                                  $(this).fadeIn(300,function() {});
+                                                  $(this).dequeue();
+                                                });
+                        $('#please-project').delay(300).queue(function(){
+                                                  $(this).removeClass("visibility-hidden");
+                                                  $(this).fadeIn(300,function() {});
+                                                  $(this).dequeue();
+                                                });
+                        $(this).dequeue();
+                      });
+            $('#keywords').dataTable({
+              "pageLength": 5,
+              "language": {
+                 "search": "<span class='glyphicon glyphicon-search span-left'></span>",
+                 "sSearchPlaceholder":" Search",
+                 "lengthMenu": 'Display <select class ="btn-sm dropdown-data-tables">'+
+                   '<option value="5">5</option>'+
+                   '<option value="10">10</option>'+
+                   '<option value="15">15</option>'+
+                   '<option value="20">20</option>'+
+                   '<option value="-1">All</option>'+
+                   '</select> records'
+
+               }
+
+            });
+
+
+
+});
+</script>

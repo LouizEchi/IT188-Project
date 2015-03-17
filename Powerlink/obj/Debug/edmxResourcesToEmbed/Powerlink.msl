@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PowerlinkModelStoreContainer" CdmEntityContainer="PowerlinkEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="PowerlinkModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Admin_Username" ColumnName="Admin_Username" />
+          <ScalarProperty Name="Admin_Password" ColumnName="Admin_Password" />
+          <ScalarProperty Name="Admin_FName" ColumnName="Admin_FName" />
+          <ScalarProperty Name="Admin_LName" ColumnName="Admin_LName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipments">
+      <EntityTypeMapping TypeName="PowerlinkModel.Equipment">
+        <MappingFragment StoreEntitySet="Equipment">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Eqp_Name" ColumnName="Eqp_Name" />
+          <ScalarProperty Name="Eqp_Category" ColumnName="Eqp_Category" />
+          <ScalarProperty Name="Eqp_Price" ColumnName="Eqp_Price" />
+          <ScalarProperty Name="Eqp_Quantity" ColumnName="Eqp_Quantity" />
+          <ScalarProperty Name="Eqp_Description" ColumnName="Eqp_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

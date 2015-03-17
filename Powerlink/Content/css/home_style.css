@@ -1,7 +1,5 @@
 
 
-
-
 /* ==========================================================================
    Login Form
    ========================================================================== */
@@ -34,27 +32,32 @@
   z-index: 2;
 }
 
-.login input[type=text]{
+.login input[type=text], .login input[type=number]{
   width: 250px;
   height: 30px;
   background: transparent;
   border: 1px solid rgba(255,255,255,0.6);
   border-radius: 2px;
   color: #fff;
-  font-family: 'Exo', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding: 4px;
+}
+
+.checkbox-login{
+    padding:5px;
+    color:#FFFFFF;
 }
 
 .login input[type=password]{
   width: 250px;
   height: 30px;
   background: transparent;
+  font-family: 'Advent Pro', sans-serif;
   border: 1px solid rgba(255,255,255,0.6);
   border-radius: 2px;
   color: #fff;
-  font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding: 4px;
@@ -69,7 +72,6 @@
   cursor: pointer;
   border-radius: 2px;
   color: #a18d6c;
-  font-family: 'Exo', sans-serif;
   font-size: 16px;
   font-weight: 400;
   padding: 6px;
@@ -106,6 +108,13 @@
    color: rgba(255,255,255,0.6);
 }
 
+.create-box{
+    background-color:rgba(0,0,0,0.6);
+    min-height:57%;
+    border-style:solid;
+    border-color:rgb(128, 128, 128);
+    border-width:1px;
+}
 
 
 .welcome-note{
@@ -119,6 +128,22 @@ color: white;
 padding: 10px;
 z-index: 2;
 
+}
+
+.b-to-list{
+  position: absolute;
+  top: calc(45% - 75px);
+  left: calc(50% - 11px);
+  margin-left:-75px;
+  width: 350px;
+  height:20px;
+  padding: 10px;
+  z-index: 2;
+ 
+}
+
+.b-to-list >a{
+      font-size:20px;
 }
 
 .welcome-note-dynamic{
@@ -202,8 +227,19 @@ z-index: 2;
 
 .register-text{
   font-size:14px;
-  color:#FFFFFF;
+  color:#808080;
+
 }
+
+.create-text{
+    font-size:20px;
+    color:#FEFEFE;
+}
+
+.register-text > a{
+    color:#FEFEFE;
+}
+
 .text-change-color-b{
   color:#000000;
 }

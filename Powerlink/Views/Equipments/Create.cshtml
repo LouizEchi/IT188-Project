@@ -1,0 +1,70 @@
+﻿@model Powerlink.Equipment
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="login create-box col-md-6 col-sm-6 col-xs-6">
+        <p class="create-text">Equipment</p>
+        <br>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group form-adjust">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Eqp_Name, new { htmlAttributes = new { Placeholder = "Equipment Name", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Eqp_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Eqp_Category, new { htmlAttributes = new { Placeholder = "Equipment Category", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Eqp_Category, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Eqp_Price, new { htmlAttributes = new { Placeholder = "Equipment Price", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Eqp_Price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Eqp_Quantity, new { htmlAttributes = new { Placeholder = "Equipment Quantity", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Eqp_Quantity, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Eqp_Description, new { htmlAttributes = new { Placeholder = "Equipment Description", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Eqp_Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div class="b-to-list col-md-6 col-sm-6 col-xs-6">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

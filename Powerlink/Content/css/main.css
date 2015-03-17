@@ -2,6 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Gochi+Hand);
 @import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
 @import url(https://fonts.googleapis.com/css?family=Delius+Unicase:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100);
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro);
 
 
 /* ==========================================================================
@@ -9,14 +11,16 @@
    ========================================================================== */
 
 * {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Advent Pro', sans-serif;
   font-size: 12px;
   margin: 0;
 }
 
+
 html, body {
   margin: auto;
   padding: 0;
+  height: 100%;
   background: #000000;
 }
 
@@ -102,6 +106,25 @@ a:hover {
   visibility:hidden;
 }
 
+.form-adjust{
+    padding:5px;
+}
+
+.details, .details > *{
+    color:#FFFFFF;
+    font-size:14px;
+}
+
+.details > dd{
+    font-size:12px;
+}
+
+.details > dd{
+    background-color:rgba(255,255,255,0.1);
+    min-height:30px;
+    text-align:center;
+}
+
 
 /* ==========================================================================
    Navbar
@@ -162,4 +185,129 @@ a:hover {
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
    color:   #FFFFFF;
+}
+
+
+
+
+
+/* ==========================================================================
+   BMS Index
+   ========================================================================== */
+.intro-project{
+	position: absolute;
+	top: calc(50% - 75px);
+	left: calc(50% - 300px);
+	margin: 10px -15px;
+	height: 150px;
+	width: auto;
+	color: white;
+	padding: 10px;
+	z-index: 2;
+}
+
+.intro-project-table{
+	position: absolute;
+	top: calc(35% - 176px);
+	left: calc(40% - 300px);
+	margin: 10px -15px;
+	height: 150px;
+	width: auto;
+	color: white;
+	padding: 10px;
+	z-index: 2;
+}
+
+@media (max-width: 480px){
+	.btn-black{
+		margin-left:75px;
+	}
+}
+
+
+table {
+	background:rgba(0,0,0,0.8);
+	color:#FFFFFF;
+}
+
+.table-bordered{
+	border-color: #657383;	
+}
+td{
+	width:150px;
+	color:#FFFFFF;
+}
+td:nth-child(1){
+	width:75px;
+}
+
+th{
+	background:rgba(0,0,0,0.8);
+}
+.click-project{
+	margin: -44px 100px;
+}
+
+a {
+	color: #FFFFFF;
+}
+/* ==========================================================================
+   Data Tables
+   ========================================================================== */
+.dataTables_wrapper .dataTables_filter input[type=search]{
+	margin-left: -190px;
+	position: absolute;
+	width: 20%;
+    color: #FFFFFF;
+	background: rgba(255,255,255,0.4);
+	border-color: transparent;
+}
+.dropdown-data-tables{
+	background: rgba(255,255,255,0.4);
+    color: #FFFFFF;
+	border-color: rgba(0,0,0,0.4);
+}
+.span-left{
+	margin: 4px 196px 0px -7px;
+}
+
+.dataTables_info .dataTables_paginate {
+	color: #FFFFFF;
+}
+
+#placeholder-color-w::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #E5D7D7;
+}
+#placeholder-color-w:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #E5D7D7;
+   opacity:  1;
+}
+#placeholder-color-w::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #E5D7D7;
+   opacity:  1;
+}
+#placeholder-color-w:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:   #E5D7D7
+}
+
+.dataTables_filter, .dataTables_length{
+    padding:10px;
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -6em;
+}
+
+.footer, .push {
+    height: 1em;
+    padding-left:25px;
+    color:#FFFFFF;
+    z-index:99999;
+}
+
+.footer > p{
+    font-size:20px;
 }

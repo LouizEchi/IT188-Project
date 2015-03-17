@@ -1,0 +1,59 @@
+﻿@model Powerlink.Admin
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="login create-box col-md-6 col-sm-6 col-xs-6">
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p class="create-text">Create User</p>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group form-adjust">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Admin_Username, new { htmlAttributes = new { Placeholder = "Username", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Admin_Username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Admin_Password, new { htmlAttributes = new { placeholder = "Password", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Admin_Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Admin_FName, new { htmlAttributes = new { placeholder = "First Name", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Admin_FName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-adjust">
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Admin_LName, new { htmlAttributes = new { placeholder = "Last Name", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Admin_LName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    }
+</div>
+
+<div class="b-to-list col-md-6 col-sm-6 col-xs-6">
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

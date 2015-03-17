@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Powerlink.Models
+@model AdminModel
+
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -12,11 +15,43 @@
         <h2 class="S-text" id="S-text">          Lights  </h2>
     </div>
     <div class="login col-md-6 col-sm-6 col-xs-6" id="login">
-        <form action="<?php echo base_url(); ?>" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" id='myFormId'>
-            <input type="text" placeholder="username" name="txt_username"><br>
-            <input type="password" placeholder="password" name="txt_password"><br>
-            <input type="submit" value="Login">
-        </form>
+
+   @using (Html.BeginForm("Login", "Admin", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(user => user.Admin_Username, new { placeholder = "Username", @class = "form-control" })
+                        @Html.ValidationMessageFor(u => u.Admin_Username, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-10 ">
+                        @Html.PasswordFor(user => user.Admin_Password, new { placeholder = "Password", @class = "form-control" })
+                        @Html.ValidationMessageFor(u => u.Admin_Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10 checkbox-login">
+                        <div class="checkbox">
+                            @Html.CheckBoxFor(user => user.RememberMe)
+                            @Html.LabelFor(user => user.RememberMe)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+                <p class="register-text">
+                    No account? @Html.ActionLink("Click Here", "/","Admin/Create") to register
+                </p>
+                @* Enable this once you have account confirmation enabled for password reset functionality
+                    <p>
+                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                    </p>*@
+            }
     </div>
 </div>
 
