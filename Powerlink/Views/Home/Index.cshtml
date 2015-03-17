@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="container row">
+    <div class="welcome-note col-md-6 col-sm-6 col-xs-6" id="phrase">
+        <h2 class="welcome-text" id="welcome-text"> </h2>
+        <h2 class="to-text" id="to-text">         </h2>
+        <h2 class="B-text" id="B-text">          Sounds</h2>
+        <h2 class="M-text" id="M-text">          and  </h2>
+        <h2 class="S-text" id="S-text">          Lights  </h2>
+    </div>
+    <div class="login col-md-6 col-sm-6 col-xs-6" id="login">
+        <form action="<?php echo base_url(); ?>" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" id='myFormId'>
+            <input type="text" placeholder="username" name="txt_username"><br>
+            <input type="password" placeholder="password" name="txt_password"><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</div>
+
