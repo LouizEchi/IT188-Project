@@ -31,17 +31,19 @@
                 </div>
             </div>
         </div> -->
+
+    @if (Session["username"] != null)
+    {
+        <div class="signout-info">
+            Welcome, @Session["adminfn"] @Session["adminln"]
+            | @Html.ActionLink("Sign Out", "Logout", "Admin") |
+        </div>
+    }
     <div class="container body-content wrapper">
-        @if (Request.IsAuthenticated)
-            {
-                <div class="login">
-                    @Html.ActionLink("Sign Out", "Logout", "Admin")
-                </div>
-            }
   
             @RenderBody()
             <hr />
-        </div>
+    </div>
     <div class="footer">
         <p>&copy; @DateTime.Now.Year - Powerlink</p>
     </div>

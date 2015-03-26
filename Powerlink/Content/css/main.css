@@ -311,3 +311,14 @@ a {
 .footer > p{
     font-size:20px;
 }
+
+.signout-info{
+  color: #FFFFFF;
+  position: absolute;
+  top: calc(2%);
+  left: calc(1% - 0px);
+  height: 150px;
+  width: 350px;
+  padding: 10px;
+  z-index: 2;
+}

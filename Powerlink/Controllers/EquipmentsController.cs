@@ -17,12 +17,23 @@ namespace Powerlink.Controllers
         // GET: Equipments
         public ActionResult Index()
         {
-            return View(db.Equipments.ToList());
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+                return View(db.Equipments.ToList());
+
         }
 
         // GET: Equipments/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,6 +49,13 @@ namespace Powerlink.Controllers
         // GET: Equipments/Create
         public ActionResult Create()
         {
+
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             return View();
         }
 
@@ -48,6 +66,13 @@ namespace Powerlink.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ID,Eqp_Name,Eqp_Category,Eqp_Price,Eqp_Quantity,Eqp_Description")] Equipment equipment)
         {
+
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             if (ModelState.IsValid)
             {
                 db.Equipments.Add(equipment);
@@ -61,6 +86,13 @@ namespace Powerlink.Controllers
         // GET: Equipments/Edit/5
         public ActionResult Edit(int? id)
         {
+
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -80,6 +112,13 @@ namespace Powerlink.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Eqp_Name,Eqp_Category,Eqp_Price,Eqp_Quantity,Eqp_Description")] Equipment equipment)
         {
+
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             if (ModelState.IsValid)
             {
                 db.Entry(equipment).State = EntityState.Modified;
@@ -92,6 +131,13 @@ namespace Powerlink.Controllers
         // GET: Equipments/Delete/5
         public ActionResult Delete(int? id)
         {
+
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -109,6 +155,12 @@ namespace Powerlink.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["username"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
+
             Equipment equipment = db.Equipments.Find(id);
             db.Equipments.Remove(equipment);
             db.SaveChanges();

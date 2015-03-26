@@ -51,7 +51,9 @@ namespace Powerlink.Controllers
                 if (myUser != null)
                 {
                     FormsAuthentication.SetAuthCookie(user.Admin_Username, user.RememberMe);
-                    Session['username']
+                    Session["username"] = user.Admin_Username;
+                    Session["adminfn"] = myUser.Admin_FName;
+                    Session["adminln"] = myUser.Admin_LName;
                     return RedirectToAction("Index", "Equipments");
                 }
                 else
@@ -66,6 +68,7 @@ namespace Powerlink.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            Session.RemoveAll();
             return RedirectToAction("Index", "Home");
         }
 
